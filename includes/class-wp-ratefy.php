@@ -189,8 +189,16 @@ class Wp_Ratefy {
 
 	public static function show_ratefy( $atts, $content = "" ) {
 
-		$html = file_get_contents(WP_PLUGIN_DIR."/wp-ratefy/public/html/ratefy.html");
-		return $html;
+		$bypass = 0;
+
+		if (is_user_logged_in() OR $bypass == 1):
+
+		$html = WP_PLUGIN_DIR."/wp-ratefy/public/html/ratefy.php";
+		require_once $html;
+
+		else:
+		echo "Sorry, only registered users can view this information";
+		endif;
 		
 	}
 
