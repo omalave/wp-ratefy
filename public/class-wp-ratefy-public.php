@@ -100,4 +100,27 @@ class Wp_Ratefy_Public {
 
 	}
 
+
+    function create_plugin_menu() {
+
+    	add_menu_page( 
+    		'WP Ratefy Data', 
+    		'WP Ratefy', 
+    		'read', 
+    		'wp-ratefy-data', 
+    		array($this, 'display_plugin_page'),
+    		'dashicons-chart-line'
+    		);
+    }
+
+    public function display_plugin_page() {
+    
+	    if ( !current_user_can( 'read' ) )  {
+	    	wp_die( __( 'You do not have sufficient permissions to access this page.' ) );
+	    }
+
+		include_once( 'partials/wp-ratefy-public-display.php' );
+	}
+
+
 }
