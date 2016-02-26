@@ -76,6 +76,7 @@ class Wp_Ratefy {
 		$this->define_admin_hooks();
 		$this->define_public_hooks();
 
+		add_shortcode( 'show_wp_ratefy', array( 'Wp_Ratefy', 'show_ratefy' ) );
 	}
 
 	/**
@@ -184,6 +185,13 @@ class Wp_Ratefy {
 		$this->loader->add_action( 'admin_menu', $plugin_public, 'create_plugin_menu' );
 
 
+	}
+
+	public static function show_ratefy( $atts, $content = "" ) {
+
+		$html = file_get_contents(WP_PLUGIN_DIR."/wp-ratefy/public/html/ratefy.html");
+		return $html;
+		
 	}
 
 	/**

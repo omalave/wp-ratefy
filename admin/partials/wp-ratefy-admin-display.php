@@ -14,4 +14,11 @@
 ?>
 
 <!-- This file should primarily consist of HTML with a little bit of PHP. -->
-Admin
+<!-- This file should primarily consist of HTML with a little bit of PHP. -->
+<div class="wrap">
+    <h2><?php echo esc_html(get_admin_page_title()); ?></h2>
+    <br/>
+    <fieldset>
+        <p>For now the only setting We got for you is the shortcode is: <code>[wp_ratefy]</code> </p>
+    </fieldset>
+</div>
