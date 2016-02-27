@@ -26,12 +26,12 @@ $wpLoader = $_SERVER['DOCUMENT_ROOT'] . "/wp-load.php";
         $wpdb->insert( 
             $ratefy_table, 
             array( 
-                'reviewer-name'    => $reviewer_name, 
-                'reviewer-email'   => $reviewer_email, 
-                'reviewer-comment' => $reviewer_comment, 
-                'reviewer-rating'  => $reviewer_rating, 
-                'reviewer-postid'  => $reviewer_postid, 
-                'reviewer-date'    => $reviewer_date
+                'reviewer_name'    => $reviewer_name, 
+                'reviewer_email'   => $reviewer_email, 
+                'reviewer_comment' => $reviewer_comment, 
+                'reviewer_rating'  => $reviewer_rating, 
+                'reviewer_postid'  => $reviewer_postid, 
+                'reviewer_date'    => $reviewer_date
             ) 
         );
 
