@@ -36,8 +36,8 @@ class Wp_Ratefy_Public_Display extends WP_List_Table {
                 
         //Set parent defaults
         parent::__construct( array(
-            'singular'  => 'Rate',     //singular name of the listed records
-            'plural'    => 'Rates',    //plural name of the listed records
+            'singular'  => 'Review',     //singular name of the listed records
+            'plural'    => 'Reviews',    //plural name of the listed records
             'ajax'      => false        //does this table support ajax?
         ) );
         
@@ -128,14 +128,14 @@ class Wp_Ratefy_Public_Display extends WP_List_Table {
     }
 
     /**
-     * Retrieve customers data from the database
+     * Retrieve reviews data from the database
      *
      * @param int $per_page
      * @param int $page_number
      *
      * @return mixed
      */
-    public static function get_customers( $per_page = 5, $page_number = 1 ) {
+    public static function get_reviews( $per_page = 5, $page_number = 1 ) {
 
       global $wpdb;
 
@@ -203,7 +203,7 @@ class Wp_Ratefy_Public_Display extends WP_List_Table {
             $data = $wpdb->get_results($wpdb->prepare("SELECT * FROM ".$wpdb->prefix."ratefy_data WHERE `reviewer_name` LIKE '%%%s%%'", $search, $search), ARRAY_A);
 
         } else {
-            $data = $this->get_customers();  
+            $data = $this->get_reviews();  
         }      
         
         /**
