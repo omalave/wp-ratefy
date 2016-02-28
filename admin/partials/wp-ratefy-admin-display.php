@@ -71,9 +71,24 @@
             </table>
 
 
+            <h3 class="title">Plugin Behavior </h3>
+            <hr size="1">
+
+            <table class="form-table">
+                <tbody>
+                <tr valign="top">
+                    <th scope="row"><label>How many reviews show?:</label></th>
+                    <td><input type="text" name="how_many_reviews_show" size="45" value="<?php echo get_option('how_many_reviews_show'); ?>" /></td>
+                </tr>   
+
+
+
+                </tbody>
+            </table>
+
 
             <p><input type="submit" name="Submit" value="Save Options" /></p>
             <input type="hidden" name="action" value="update" />
-            <input type="hidden" name="page_options" value="add_review_text,rate_service_text,comment_box_placeholder,save_button_text" />
+            <input type="hidden" name="page_options" value="add_review_text,rate_service_text,comment_box_placeholder,save_button_text,how_many_reviews_show" />
         </form>
     </div>
